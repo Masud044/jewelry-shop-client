@@ -5,6 +5,7 @@ import Swal from 'sweetalert2'
 import { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import GoogleSign from '../shared/GoogleSign';
 
 
 const Login = () => {
@@ -89,7 +90,7 @@ const Login = () => {
                         </form>
                         <p className="text-center font-medium text-2xl"><small >New Here? <Link to="/signup">Create an account</Link> </small></p>
                        
-                     
+                      <GoogleSign></GoogleSign>
                     </div>
                 </div>
             </div>
