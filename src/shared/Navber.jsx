@@ -16,16 +16,16 @@ const Navber = () => {
         <Link to="/">Home</Link>
       </li>
       <li className="font-medium">
-        <Link to="/">Blog</Link>
+        <Link to="/blog">Blog</Link>
       </li>
       <li className="font-medium">
-        <Link to="/">All jewelry</Link>
+        <Link to="/alljewelry">All jewelry</Link>
       </li>
       <li className="font-medium">
-        <Link to="/">My jewelry</Link>
+        <Link to="/myjewelry">My jewelry</Link>
       </li>
       <li className="font-medium">
-        <Link to="/">Add jewelry</Link>
+        <Link to="/addjewelry">Add jewelry</Link>
       </li>
     </>
   );
