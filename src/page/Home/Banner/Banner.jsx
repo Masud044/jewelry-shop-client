@@ -9,7 +9,7 @@ const Banner = () => {
     return (
         <Slide><div className="carousel w-full h-[500px] ">
         <div id="slide1" className="carousel-item relative w-full">
-            <img src="https://i.ibb.co/7G7kWnL/yoga-4489430-640-1.jpg" className="w-full" />
+            <img src="https://i.ibb.co/qBRf8RY/sabrianna-Y-bxf-Ta-i-UA-unsplash.jpg" className="w-full" />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
 
                 
@@ -27,7 +27,7 @@ const Banner = () => {
            
         </div>
         <div id="slide2" className="carousel-item relative w-full">
-            <img src="https://i.ibb.co/xGPbqZL/yoga-2662234-640.jpg" className="w-full" />
+            <img src="https://i.ibb.co/HdCDL8t/cornelia-ng-2z-HQhf-Episc-unsplash.jpg" />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                 <a href="#slide1" className="btn btn-circle  bg-amber-400">❮</a>
                 <div>
@@ -42,7 +42,7 @@ const Banner = () => {
         </div>
 
         <div id="slide3" className="carousel-item relative w-full">
-            <img src="https://i.ibb.co/tKhzJdx/ease-3134828-640.jpg" className="w-full" />
+            <img src="https://i.ibb.co/hcGm0mF/choong-deng-xiang-WR98-S28o-RLM-unsplash-1.jpg" className="w-full" />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                 <a href="#slide2" className="btn btn-circle  bg-amber-400">❮</a>
                 <div>
