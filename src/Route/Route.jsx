@@ -7,11 +7,13 @@ import AllJewelry from "../page/AllJewelry/AllJewelry";
 import MyJewelry from "../page/MyJewelry/MyJewelry";
 import AddJewelry from "../page/AddJewelry/AddJewelry";
 import Blog from "../page/AddJewelry/Blog/Blog";
+import ErrorPage from "../page/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage/>,
     children: [
       {
         path: "/",
