@@ -13,6 +13,12 @@ const Navber = () => {
       <li className="font-medium">
         <Link to="/">All jewelry</Link>
       </li>
+      <li className="font-medium">
+        <Link to="/">My jewelry</Link>
+      </li>
+      <li className="font-medium">
+        <Link to="/">Add jewelry</Link>
+      </li>
     </>
   );
   return (
@@ -36,7 +42,7 @@ const Navber = () => {
                 </div>
                 <div className="navbar-end ">
                  
-
+                 <Link><button>Login</button></Link> 
 
                 </div>
             </div>
