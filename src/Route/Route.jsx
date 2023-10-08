@@ -20,19 +20,19 @@ const router = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/alljewelry",
+        path: "alljewelry",
         element: <AllJewelry></AllJewelry>,
       },
       {
-        path: "/myjewelry",
+        path: "myjewelry/:id",
         element: <MyJewelry></MyJewelry>,
       },
       {
-        path: "/addjewelry",
+        path: "addjewelry",
         element: <AddJewelry></AddJewelry>,
       },
       {
-        path: "/blog",
+        path: "blog",
         element: <Blog></Blog>,
       },
       {
