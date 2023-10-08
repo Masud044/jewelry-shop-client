@@ -1,6 +1,31 @@
+import { useQuery } from "@tanstack/react-query";
+import {  Circles } from "react-loader-spinner";
+
 const AllJewelry = () => {
+
+   const {isLoading,data: Alljewelry=[]} = useQuery({
+        queryKey:['alljewelry'],
+        queryFn: async()=>{
+            const res = await fetch('http://localhost:5000/alljewelry')
+            return res.json();
+       }
+   })
+
+   if(isLoading){
+    return <Circles
+    height="80"
+    width="80"
+    color="#4fa94d"
+    ariaLabel="circles-loading"
+    wrapperStyle={{}}
+    wrapperClass=""
+    visible={true}
+  />
+ }
+
+   
   return (
-    <div>
+    <div className="mb-20">
       <div>
         <div
           className="hero h-96 "
@@ -17,6 +42,10 @@ const AllJewelry = () => {
             </div>
           </div>
         </div>
+       
+
+         
+
       </div>
     </div>
   );
