@@ -58,8 +58,9 @@ const MyJewelry = () => {
               />
             </figure>
             <div className="card-body">
-              <h2 className="card-title text-black">{item.shopName}</h2>
-              <p className="font-bold">{item.jewelryName}</p>
+            <h2 className="card-title text-black">{item.jewelryName}</h2>
+              <p className="font-bold opacity-70">{item.shopName}</p>
+             
               <Rating style={{ maxWidth: 80 }} value={item.rating} readOnly />
              
             </div>

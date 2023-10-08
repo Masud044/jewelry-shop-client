@@ -1,9 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { useContext } from "react";
 import { Circles } from "react-loader-spinner";
-import { Link } from "react-router-dom";
+
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { Rating } from "@smastrom/react-rating";
+import '@smastrom/react-rating/style.css'
 
 const AllJewelry = () => {
 
@@ -89,11 +91,28 @@ const AllJewelry = () => {
                 <img src={item.image} alt="jewelry" />
               </figure>
               <div className="card-body">
+                <div className="flex justify-between">
+                  <div>
+                  <Rating style={{ maxWidth: 80 }} value={item.rating} readOnly />
+                  </div>
+                  <div>
+                  <p className="font-bold text-amber-600">${item.taka}</p>
+                  </div>
+              
+                
+                </div>
                 <h2 className="card-title">{item.jewelryName}</h2>
-                <p>{item.shopName}</p>
-                <p>{item.makeElementName}</p>
-                <div className="card-actions justify-end">
-                 <button onClick={()=>handlemyjewelry(item)} className="btn btn-primary">Add Jewelry</button>
+                
+               
+                  <div>
+                   <p className="font-medium opacity-80 font-serif">{item.shopName}</p>
+                  <p className="font-medium opacity-80 font-serif">{item.makeElementName}</p>
+                  </div>
+                 
+               
+               
+                <div className="card-actions ">
+                 <button onClick={()=>handlemyjewelry(item)} className="btn bg-amber-600 w-full">Add Jewelry</button>
                 </div>
               </div>
             </div>
