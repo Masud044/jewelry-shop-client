@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         element: <AllJewelry></AllJewelry>,
       },
       {
-        path: "myjewelry/:id",
+        path: "myjewelry",
         element: <MyJewelry></MyJewelry>,
       },
       {

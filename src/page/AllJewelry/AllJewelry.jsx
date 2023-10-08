@@ -1,8 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
+import { useContext } from "react";
 import { Circles } from "react-loader-spinner";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AllJewelry = () => {
+
+  const {user} = useContext(AuthContext);
   const { isLoading, data: Alljewelry = [] } = useQuery({
     queryKey: ["alljewelry"],
     queryFn: async () => {
@@ -12,8 +17,35 @@ const AllJewelry = () => {
   });
 
 
-  const handlemyjewelry=(data)=>{
-      console.log(data)
+  const handlemyjewelry=(item)=>{
+    
+    if(user && user?.email){
+       const jewelry = {jewelryName:item.jewelryName,classId:item._id,image:item.image,rating:item.rating,email:user?.email,shopName:item.shopName
+       }
+      //  console.log(jewelry)
+      fetch('http://localhost:5000/myjewelry',{
+        method:'POST',
+        headers:{
+          'content-type':'application/json',
+        },
+        body:JSON.stringify(jewelry)
+        
+     })
+     .then(res=>res.json())
+     .then(data=>{
+        if(data.insertedId){
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'successfuly jewelry add',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
+     })
+    }
+      
+     
   }
 
   if (isLoading) {
@@ -60,7 +92,7 @@ const AllJewelry = () => {
                 <h2 className="card-title">{item.jewelryName}</h2>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
                 <div className="card-actions justify-end">
-                 <button onClick={()=>handlemyjewelry(item._id)} className="btn btn-primary">Add Jewelry</button>
+                 <button onClick={()=>handlemyjewelry(item)} className="btn btn-primary">Add Jewelry</button>
                 </div>
               </div>
             </div>
