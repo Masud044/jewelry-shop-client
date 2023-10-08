@@ -6,10 +6,14 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import { Rating } from "@smastrom/react-rating";
 import '@smastrom/react-rating/style.css'
+import { useNavigate } from "react-router-dom";
+import useAdmin from "../../Hook/useAdmin";
 
 const AllJewelry = () => {
 
   const {user} = useContext(AuthContext);
+  const [isAdmin] = useAdmin();
+  const navigate = useNavigate();
   const { isLoading, data: Alljewelry = [] } = useQuery({
     queryKey: ["alljewelry"],
     queryFn: async () => {
@@ -45,6 +49,9 @@ const AllJewelry = () => {
           })
         }
      })
+    }
+    else{
+       navigate('/login');
     }
       
      
@@ -112,7 +119,12 @@ const AllJewelry = () => {
                
                
                 <div className="card-actions ">
-                 <button onClick={()=>handlemyjewelry(item)} className="btn bg-amber-600 w-full">Add Jewelry</button>
+
+                  {
+                    user && isAdmin?.admin?<button disabled onClick={()=>handlemyjewelry(item)} className="btn bg-amber-600 w-full">Add Jewelry</button>:
+                    <button onClick={()=>handlemyjewelry(item)} className="btn bg-amber-600 w-full">Add Jewelry</button>
+                  }
+                 
                 </div>
               </div>
             </div>
