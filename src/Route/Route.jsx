@@ -8,6 +8,8 @@ import MyJewelry from "../page/MyJewelry/MyJewelry";
 import AddJewelry from "../page/AddJewelry/AddJewelry";
 import Blog from "../page/AddJewelry/Blog/Blog";
 import ErrorPage from "../page/ErrorPage/ErrorPage";
+import Dashboard from "../layout/Dashboard";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -23,14 +25,7 @@ const router = createBrowserRouter([
         path: "alljewelry",
         element: <AllJewelry></AllJewelry>,
       },
-      {
-        path: "myjewelry",
-        element: <MyJewelry></MyJewelry>,
-      },
-      {
-        path: "addjewelry",
-        element: <AddJewelry></AddJewelry>,
-      },
+      
       {
         path: "blog",
         element: <Blog></Blog>,
@@ -45,6 +40,20 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path:'dashboard',
+    element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+    children:[
+      {
+        path: "myjewelry",
+        element: <MyJewelry></MyJewelry>,
+      },
+      {
+        path: "addjewelry",
+        element: <AddJewelry></AddJewelry>,
+      },
+    ]
+  }
 ]);
 
 export default router;

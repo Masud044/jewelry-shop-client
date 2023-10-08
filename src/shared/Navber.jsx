@@ -26,6 +26,14 @@ const Navber = () => {
         <Link to="/alljewelry">All jewelry</Link>
       </li>
       {
+        user?<>
+        <li className="font-medium">
+        <Link to="/dashboard">Dashboard</Link>
+      </li>
+        </>:''
+      }
+
+      {/* {
         user && !isAdmin?.admin? <>
         <li className="font-medium">
         <Link to="/myjewelry">My jewelry</Link>
@@ -39,7 +47,7 @@ const Navber = () => {
         <Link to="/addjewelry">Add jewelry</Link>
       </li>
         </>:''
-      }
+      } */}
      
     </>
   );

@@ -4,11 +4,13 @@ import { useContext } from "react";
 import { Rating } from "@smastrom/react-rating";
 import '@smastrom/react-rating/style.css'
 import { Circles } from "react-loader-spinner";
+import { FaTrashAlt } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 
 const MyJewelry = () => {
   const { user } = useContext(AuthContext);
-  const { isLoading, data: Myjewelry = [] } = useQuery({
+  const { isLoading, refetch, data: Myjewelry = [] } = useQuery({
     queryKey: ["myjewelry", user?.email],
     queryFn: async () => {
       const res = await fetch(
@@ -17,6 +19,36 @@ const MyJewelry = () => {
       return res.json();
     },
   });
+
+  const handleDelete = item => {
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            fetch(`http://localhost:5000/myjewelry/${item._id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        refetch();
+                        Swal.fire(
+                            'Deleted!',
+                            'Your file has been deleted.',
+                            'success'
+                        )
+                    }
+                })
+        }
+    })
+
+}
 
   if (isLoading) {
     return (
@@ -33,41 +65,65 @@ const MyJewelry = () => {
   }
 
   return (
-    <div>
-      <div>
-        <div
-          className="hero h-96 mb-20"
-          style={{
-            backgroundImage:
-              "url(https://i.ibb.co/KVgnqy3/freestocks-zii-Uk-V9-Lpd-U-unsplash.jpg)",
-          }}
-        >
-          <div className="hero-overlay bg-opacity-60"></div>
-          <div className="hero-content text-center text-neutral-content">
-            <div className="max-w-md">
-              <h1 className="mb-5 text-5xl font-bold">My Jewelry</h1>
-            </div>
-          </div>
-        </div>
-        {Myjewelry?.map((item) => (
-          <div key={item._id} className="card card-side bg-base-100  md:w-4/6 opacity-90 mb-4 p-2 shadow">
-            <figure className="w-96">
-              <img
-                src={item.image}
-                alt="image"
-              />
-            </figure>
-            <div className="card-body">
-            <h2 className="card-title text-black">{item.jewelryName}</h2>
-              <p className="font-bold opacity-70">{item.shopName}</p>
-             
-              <Rating style={{ maxWidth: 80 }} value={item.rating} readOnly />
-             
-            </div>
-          </div>
-        ))}
-      </div>
+    <div className="w-full">
+   
+
+  
+    <div className="overflow-x-auto mt-20">
+        <table className="table">
+            {/* head */}
+            <thead>
+                <tr className="font-bold text-black">
+                    <th>
+                        #
+                    </th>
+                    <th >Image</th>
+                    <th>Name</th>
+
+                    <th>shopName</th>
+                    <th>Delete</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    Myjewelry.map((item, index) => <tr key={item._id} >
+                        <td>
+                            {index + 1}
+                        </td>
+                        <td>
+                            <div className="flex items-center space-x-3">
+                                <div className="avatar">
+                                    <div className="mask mask-squircle w-12 h-12">
+                                        <img src={item.image} alt="Avatar Tailwind CSS Component" />
+                                    </div>
+                                </div>
+
+                            </div>
+                        </td>
+                        <td>
+                            {item.jewelryName}
+                        </td>
+                       
+                        <td>{item.shopName}</td>
+                        <td>
+                                    <button onClick={() => handleDelete(item)} className="btn btn-ghost bg-red-400  text-black"><FaTrashAlt></FaTrashAlt></button>
+                                </td>
+                      
+
+                       
+                       
+                    </tr>)
+                }
+
+
+
+            </tbody>
+
+
+        </table>
     </div>
+</div>
   );
 };
 

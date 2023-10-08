@@ -88,7 +88,7 @@ const AllJewelry = () => {
             </div>
           </div>
         </div>
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-3 justify-center gap-4">
           {Alljewelry.map((item) => (
             <div
               key={item._id}
