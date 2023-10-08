@@ -90,7 +90,8 @@ const AllJewelry = () => {
               </figure>
               <div className="card-body">
                 <h2 className="card-title">{item.jewelryName}</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <p>{item.shopName}</p>
+                <p>{item.makeElementName}</p>
                 <div className="card-actions justify-end">
                  <button onClick={()=>handlemyjewelry(item)} className="btn btn-primary">Add Jewelry</button>
                 </div>
