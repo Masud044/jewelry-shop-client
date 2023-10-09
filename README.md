@@ -26,3 +26,6 @@
 - Node.js
 - Mongodb
 - vercel deploy
+
+## Live Link
+(https://jewelry-shop-9ccba.web.app/)
