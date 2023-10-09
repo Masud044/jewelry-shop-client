@@ -40,21 +40,21 @@ const AddJewelry = () => {
     <div>
       <div>
        
-        <form className="mt-20 mb-10 bg-gray-400 p-4 rounded-lg" onSubmit={handleSubmit(onSubmit)}>
+        <form className="mt-20 mb-10 bg-teal-300 p-4 rounded-lg" onSubmit={handleSubmit(onSubmit)}>
 
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4">
                 <div className="form-control w-full ">
                     <label className="label">
-                        <span className="label-text">Jewelry name</span>
+                        <span className="label-text font-semibold  ">Jewelry name</span>
 
                     </label>
-                    <input type="text" {...register("jewelryName", { required: true })} placeholder="Type here" className="input input-bordered max-w-5xl " />
+                    <input type="text" {...register("jewelryName", { required: true })} placeholder="Type here" className="input input-bordered font-semibold  max-w-5xl " />
 
                 </div>
                 <div className="form-control w-full ">
                     <label className="label">
-                        <span className="label-text">Image</span>
+                        <span className="label-text font-semibold">Image</span>
 
                     </label>
                     <input type="text" {...register("image", { required: true })} placeholder="Type here" className="input input-bordered max-w-5xl " />
@@ -62,7 +62,7 @@ const AddJewelry = () => {
                 </div>
                 <div className="form-control w-full ">
                     <label className="label">
-                        <span className="label-text">Shop Name</span>
+                        <span className="label-text font-semibold">Shop Name</span>
 
                     </label>
                     <input type='text' {...register("shopName", { required: true })} placeholder="Type here" className="input input-bordered max-w-5xl " />
@@ -70,36 +70,36 @@ const AddJewelry = () => {
                 </div>
                 <div className="form-control w-full ">
                     <label className="label">
-                        <span className="label-text">MakeElementName</span>
+                        <span className="label-text font-semibold">MakeElementName</span>
 
                     </label>
-                    <input type='text' {...register("makeElementName", { required: true })} placeholder="Type here"  className="input input-bordered max-w-5xl "  />
+                    <input type='text' {...register("makeElementName", { required: true })} placeholder="Type here"  className="input input-bordered max-w-5xl  "  />
 
                 </div>
                 <div className="form-control w-full ">
                     <label className="label">
-                        <span className="label-text">Taka</span>
+                        <span className="label-text font-semibold">Taka</span>
 
                     </label>
-                    <input type="number" {...register("taka", { required: true })} placeholder="Type here" className="input input-bordered max-w-5xl " />
+                    <input type="number" {...register("taka", { required: true })} placeholder="Type here" className="input  input-bordered max-w-5xl " />
 
                 </div>
               
                 <div className="form-control w-full ">
                     <label className="label">
-                        <span className="label-text">Rating</span>
+                        <span className="label-text font-semibold">Rating</span>
 
                     </label>
                     <input type="number"{...register("rating", { required: true })} placeholder="Type here" className="input input-bordered max-w-5xl " />
 
                 </div>
                
-                <div className="form-control">
+                <div className="form-control w-96">
                     <label className="label">
-                        <span className="label-text"> Description</span>
+                        <span className="label-text font-semibold"> Description</span>
 
                     </label>
-                    <textarea name="textarea"  {...register("description", { required: true })} className="textarea textarea-bordered h-24" placeholder="Details description"></textarea>
+                    <textarea name="textarea"  {...register("description", { required: true })} className="textarea   textarea-bordered h-24 " placeholder="Details description"></textarea>
 
                 </div>
             </div>
@@ -107,7 +107,7 @@ const AddJewelry = () => {
 
 
 
-            <input className="bg-amber-400 mt-6 text-white rounded-lg p-3" type="submit" value="Jewelry Add" />
+            <input className="bg-teal-900 mt-6 text-white rounded-lg p-3" type="submit" value="Jewelry Add" />
         </form >
       </div>
     </div>

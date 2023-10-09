@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 
-
+import { Slide } from "react-awesome-reveal";
 
 
 const Blog = () => {
@@ -28,11 +28,12 @@ const Blog = () => {
             </div>
           </div>
         </div>
-        <div className="grid md:grid-cols-3 justify-center gap-4">
-          {Alljewelry.map((item) => (
-            <div
-              key={item._id}
-              className=" card card-compact w-96 bg-base-100 shadow-xl"
+         <div className="grid md:grid-cols-3 justify-center gap-4">
+          {Alljewelry.map((item) => {
+             return <Slide key={item._id}>
+                      <div
+              
+              className=" card card-compact w-96 bg-teal-100 shadow-xl"
             >
               <figure>
                 <img src={item.image} alt="jewelry" />
@@ -43,14 +44,21 @@ const Blog = () => {
 
                 <div>
                   
-                  <p className="text-center font-medium">{item.description}</p>
+                  <p className="text-center  font-medium">{item.description}</p>
                 </div>
 
               
               </div>
             </div>
-          ))}
+             </Slide>
+          }
+
+           
+           
+           
+            )}
         </div>
+      
       </div>
     </div>
   );

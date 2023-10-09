@@ -54,10 +54,10 @@ const Login = () => {
               <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col ">
                     <div className="text-center md:w-1/2 lg:text-left">
-                        <h1 className="text-5xl font-bold">Login now</h1>
+                        <h1 className="text-5xl  font-bold">Login now</h1>
                      
                     </div>
-                    <div className="card  md:w-1/2 sm:max-w-2xl   shadow-2xl bg-base-100">
+                    <div className="card  md:w-1/2 sm:max-w-2xl   shadow-2xl bg-teal-400">
                         <form onSubmit={handleLogin} className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -85,7 +85,7 @@ const Login = () => {
                             </div>
                            
                             <div className="form-control mt-6">
-                                <input  className="btn btn-primary" type="submit" value="Login" />
+                                <input  className="btn bg-teal-500 text-white" type="submit" value="Login" />
                             </div>
                         </form>
                         <p className="text-center font-medium text-2xl"><small >New Here? <Link to="/signup">Create an account</Link> </small></p>

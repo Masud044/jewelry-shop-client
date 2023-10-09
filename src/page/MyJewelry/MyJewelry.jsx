@@ -65,7 +65,7 @@ const MyJewelry = () => {
   }
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-gray-100">
    
 
   
@@ -101,7 +101,7 @@ const MyJewelry = () => {
 
                             </div>
                         </td>
-                        <td>
+                        <td >
                             {item.jewelryName}
                         </td>
                        

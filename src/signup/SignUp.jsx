@@ -81,7 +81,7 @@ const SignUp = () => {
           <div className="text-center lg:text-left">
             <h1 className="text-5xl mt-20 font-bold">Sign up</h1>
           </div>
-          <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
+          <div className="card flex-shrink-0 w-full max-w-lg shadow-2xl bg-teal-400">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
 
                 <div className="md:flex gap-3">
@@ -168,7 +168,7 @@ const SignUp = () => {
               </div>
               <div className="form-control mt-6">
                 <input
-                  className="btn btn-primary"
+                  className="btn bg-teal-400 text-white"
                   type="submit"
                   value="Sign Up"
                 />

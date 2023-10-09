@@ -121,8 +121,8 @@ const AllJewelry = () => {
                 <div className="card-actions ">
 
                   {
-                    user && isAdmin?.admin?<button disabled onClick={()=>handlemyjewelry(item)} className="btn bg-amber-600 w-full">Add Jewelry</button>:
-                    <button onClick={()=>handlemyjewelry(item)} className="btn bg-amber-600 w-full">Add Jewelry</button>
+                    user && isAdmin?.admin?<button disabled onClick={()=>handlemyjewelry(item)} className="btn bg-teal-600 w-full">Add Jewelry</button>:
+                    <button onClick={()=>handlemyjewelry(item)} className="btn bg-teal-600 w-full text-white">Add Jewelry</button>
                   }
                  
                 </div>

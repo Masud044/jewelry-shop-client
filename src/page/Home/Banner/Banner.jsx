@@ -13,7 +13,7 @@ const Banner = () => {
             className="w-full"
           />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide3" className="btn btn-circle  bg-gray-400">
+            <a href="#slide3" className="btn btn-circle  bg-teal-400">
               ❮
             </a>
             <div>
@@ -21,7 +21,7 @@ const Banner = () => {
               Our Expertise Your Diamond
               </h1>
             </div>
-            <a href="#slide2" className="btn btn-circle  bg-gray-400">
+            <a href="#slide2" className="btn btn-circle  bg-teal-400">
               ❯
             </a>
           </div>
@@ -29,7 +29,7 @@ const Banner = () => {
         <div id="slide2" className="carousel-item relative w-full">
           <img src="https://i.ibb.co/vk9fKFB/image-1920x-2.jpg" />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide1" className="btn btn-circle  bg-gray-400">
+            <a href="#slide1" className="btn btn-circle  bg-teal-400">
               ❮
             </a>
             <div>
@@ -37,7 +37,7 @@ const Banner = () => {
               We Develop Create Custom Jewels
               </h1>
             </div>
-            <a href="#slide3" className="btn btn-circle  bg-gray-400">
+            <a href="#slide3" className="btn btn-circle  bg-teal-400">
               ❯
             </a>
           </div>
@@ -49,7 +49,7 @@ const Banner = () => {
             className="w-full"
           />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide2" className="btn btn-circle  bg-gray-400">
+            <a href="#slide2" className="btn btn-circle  bg-teal-400">
               ❮
             </a>
             <div>
@@ -57,7 +57,7 @@ const Banner = () => {
                Stylish Jewelry Collection
               </h1>
             </div>
-            <a href="#slide1" className="btn btn-circle  bg-gray-400">
+            <a href="#slide1" className="btn btn-circle  bg-teal-400">
               ❯
             </a>
           </div>
