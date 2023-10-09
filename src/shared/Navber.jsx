@@ -33,27 +33,13 @@ const Navber = () => {
         </>:''
       }
 
-      {/* {
-        user && !isAdmin?.admin? <>
-        <li className="font-medium">
-        <Link to="/myjewelry">My jewelry</Link>
-      </li>
-        </>:''
-      }
-      
-      {
-        user && isAdmin?.admin? <>
-        <li className="font-medium">
-        <Link to="/addjewelry">Add jewelry</Link>
-      </li>
-        </>:''
-      } */}
+     
      
     </>
   );
   return (
     <div>
-      <div className="navbar fixed z-10   max-w-screen-xl bg-white ">
+      <div className="navbar fixed z-10   max-w-screen-xl bg-white shadow-md  ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
